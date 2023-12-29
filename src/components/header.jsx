@@ -5,22 +5,19 @@ function Header() {
     return (
         <header className='header-container'>
             <div className='header-content'>
-                <h1 className='header-title'>menath.dev</h1>
                 <nav className='header-nav'>
+                    <h1 className='header-title'>menath.dev</h1>
 
-                    <div className='nav-item'>
-                        <button><a href="#">Home</a></button>
-                    </div>
-                    <div className='nav-item'>
-                        <button><a href="#">About</a></button>
-                    </div>
-                    <div className='nav-item'>
-                        <button><a href="#">Projects</a></button>
-                    </div>
-                    <div className='nav-item'>
-                        <button><a href="#">Blogs</a></button>
-                    </div>
-                    
+                <div className='navbar-items'>
+                    <ul>
+                        <button><li><a href="#">Home</a></li></button>
+                        <button><li><a href="#">About</a></li></button>
+                        <button><li><a href="#">Projects</a></li></button>
+                        <button><li><a href="#">Blogs</a></li></button>
+                    </ul>
+                </div>
+
+
                 </nav>
             </div>
         </header>
