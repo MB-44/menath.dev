@@ -1,7 +1,8 @@
-/* .header-container {
+.header-container {
     margin-left: 100px;
     margin-right: 100px;
-} */
+    /* margin-top: 20px; */
+}
 
 
 .header-title {
@@ -18,7 +19,7 @@ nav {
 }
 
 
-.navbar-items a {
+.navbar-items li a {
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -27,11 +28,23 @@ nav {
 }
 
 .navbar-items button {
+    border: none;
     background-color: transparent;
     border-radius: 5px;
     width: 100px;
-    /* margin-right: 5px; */
+    height: 30px;
+    margin-right: 5px; 
 }
+
+.navbar-items button:hover {
+    background-color: rgb(226, 230, 234);
+}
+
+.navbar-items button:active {
+    background-color: rgb(215, 219, 223);
+    color: rgba(72, 72, 176, 0.872);
+}
+
 
 .navbar-items ul {
     display: flex;
@@ -41,4 +54,6 @@ nav {
 
 .navbar-items li {
     list-style-type: none;
+    /* text-align: center;
+    position: relative; */
 }

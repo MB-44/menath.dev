@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ColorSchemeToggle from './colorSchemeToggle';
 import "./header-style.css";
+
 
 function Header() {
     return (
@@ -10,14 +12,13 @@ function Header() {
 
                 <div className='navbar-items'>
                     <ul>
-                        <button><li><a href="#">Home</a></li></button>
-                        <button><li><a href="#">About</a></li></button>
-                        <button><li><a href="#">Projects</a></li></button>
-                        <button><li><a href="#">Blogs</a></li></button>
+                        <li><button><a href="#">Home</a></button></li>
+                        <li><button><a href="#">About</a></button></li>
+                        <li><button><a href="#">Projects</a></button></li>
+                        <li><button><a href="#">Blogs</a></button></li>
                     </ul>
                 </div>
-
-
+                <ColorSchemeToggle />
                 </nav>
             </div>
         </header>
