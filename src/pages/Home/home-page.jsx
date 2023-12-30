@@ -13,9 +13,16 @@ function HomePage() {
                 <h2>Hi, I'm Menath</h2>
                 <h3>Also known as MB-44</h3>
                 <p>I'm a game developer</p>
+                <div className={styles.card_button}>
+                    <button>About Menath</button>
+                    <button>Projects</button>
+                </div>
+
+
             </div>
             
             <img src={ProfilePic} className={styles.Img} alt="" />
+            
         </div>
         
         
