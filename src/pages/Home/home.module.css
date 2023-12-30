@@ -4,7 +4,7 @@
     align-self: auto;
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
-    width: 800px;
+    width: 80%;
     margin: 60px auto 0;
     padding: 20px;
     margin-top: 60px;
@@ -41,13 +41,15 @@
     border-radius: 50%;
     margin-bottom: 20px;
 
-    max-width: 20%;
+    /* max-width: 100%; */
+    max-width: 30%;
     height: auto; 
 }
 
 .card_button {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
     /* padding: 5px; */
 }
 
@@ -90,4 +92,19 @@
 }
 .projects_button:active {
     background-color: #c7c7c9;
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+    }
+
+    .content {
+        font-size: 15px;
+        padding-right: 10px;
+    }
+
+    .card_button button {
+        width: 100px;
+    }
 }
