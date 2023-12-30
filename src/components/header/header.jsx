@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import ColorSchemeToggle from './colorSchemeToggle';
+import React from 'react';
 import "./header-style.css";
 
 
@@ -18,7 +17,7 @@ function Header() {
                         <li><button><a href="#">Blogs</a></button></li>
                     </ul>
                 </div>
-                <ColorSchemeToggle />
+
                 </nav>
             </div>
         </header>
