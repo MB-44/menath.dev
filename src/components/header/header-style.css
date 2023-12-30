@@ -1,7 +1,7 @@
 .header-container {
     margin-left: 30px;
     margin-right: 100px;
-    margin-top: -20px;
+    margin-top: -35px;
 }
 
 
@@ -62,9 +62,11 @@ nav {
 @media (max-width: 768px) {
     .header-content {
         padding: 20px;
+        /* padding: 10px; */
     }
 
     .navbar-items {
+        /* margin-left: auto; */
         display: none;
         flex-direction: column;
         position: absolute;
@@ -78,8 +80,13 @@ nav {
         display: flex;
     }
 
+    .header-title {
+        margin-right: auto;
+    }
+
     .navbar-items ul {
         flex-direction: column;
+        /* flex-direction: row; */
     }
 
     .navbar-items li {
@@ -87,6 +94,7 @@ nav {
     }
 
     .navbar-toggle {
+        /* margin-left: auto; */
         display: block;
         cursor: pointer;
         background-color: transparent;
@@ -97,3 +105,14 @@ nav {
     }
 
 }
+
+@media (min-width: 769px) {
+    .navbar-toggle {
+        display: none;
+    }
+
+    .navbar-items {
+        display: flex;
+    }
+}
+
