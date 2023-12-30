@@ -58,3 +58,42 @@ nav {
     /* text-align: center;
     position: relative; */
 }
+
+@media (max-width: 768px) {
+    .header-content {
+        padding: 20px;
+    }
+
+    .navbar-items {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #f8f9fa;
+    }
+
+    .navbar-items.show-menu {
+        display: flex;
+    }
+
+    .navbar-items ul {
+        flex-direction: column;
+    }
+
+    .navbar-items li {
+        margin-bottom: 10px;
+    }
+
+    .navbar-toggle {
+        display: block;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        color: #212529;
+        font-family: monospace;
+    }
+
+}
