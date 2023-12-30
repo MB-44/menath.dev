@@ -1,0 +1,38 @@
+.card {
+    justify-content: center;
+    display: flex;
+    
+    align-self: auto;
+    border: 1px solid rgb(52, 51, 51);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    max-width: 500px;
+    background-color: rgb(255, 255, 255);
+    /* display: inline-block;  */
+    margin-left: 100px;
+    margin-right: 100px;
+    
+
+}
+
+.content {
+    font-family: sans-serif;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.content h3 {
+    margin-top: -15px;
+}
+
+
+.Img {
+    max-width: 30%;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
