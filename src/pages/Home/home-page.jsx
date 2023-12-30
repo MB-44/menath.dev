@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../components/header/header";
 import styles from "./home.module.css";
 import ProfilePic from "../../assets/profile-pic.jpg";
+// import { style } from "@mui/system";
 
 function HomePage() {
     return (
@@ -14,8 +15,8 @@ function HomePage() {
                 <h3>Also known as MB-44</h3>
                 <p>I'm a game developer</p>
                 <div className={styles.card_button}>
-                    <button>About Menath</button>
-                    <button>Projects</button>
+                    <button className={styles.about_button}>About Menath</button>
+                    <button className={styles.projects_button}>Projects</button>
                 </div>
 
 

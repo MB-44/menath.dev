@@ -19,7 +19,7 @@
 
 .content {
     flex: 2;
-    font-size: 15px;
+    font-size: 17px;
     text-align: left;
     font-family: monospace;
     padding-top: 10px;
@@ -52,13 +52,42 @@
 }
 
 .card_button button {
-    width: 100px;
+    width: 120px;
     height: 30px;
-    border: transparent;
-    background-color: #407be9;
-    color: aliceblue;
+    
     border-radius: 5px;
     font-family: monospace;
-    font-weight: bold;
-    font-size: 13px;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.about_button {
+    border: transparent;
+    background-color: #5e7ab3;
+    border: 1px solid #5e7ab3;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.1s ease;
+}
+
+.projects_button {
+    border: 0.5px solid #b8b8ba;
+    color: black;
+    background-color: transparent;
+    transition: background-color 0.1s ease;
+}
+
+
+.about_button:hover {
+    background-color: #5771a4;
+}
+.about_button:active {
+    background-color: #1c3f73;
+}
+
+
+.projects_button:hover {
+    background-color: #f2f2f2;
+}
+.projects_button:active {
+    background-color: #c7c7c9;
 }
