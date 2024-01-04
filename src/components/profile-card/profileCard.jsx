@@ -2,22 +2,29 @@ import React,{useState} from "react";
 import profile_pic from "../../assets/profile-pic.jpg";
 import AboutPage from "../../pages/about/about-page";
 import ProjectsPage from "../../pages/projects/project-page";
+import ColorSchemeToggle from "../colorSchemeToggle/colorSchemeToggle";
 import "./profileCard.css"
 
 function ProfileCard () {
 
     const [showAboutPage, setShowAboutPage] = useState(false);
     const [showProjectsPage, setShowProjectsPage] = useState(false)
+    const [isDarkMode, setIsDarkMode] = useState(false)
 
     const handleAboutButton = () => {
         setShowAboutPage(true);
         setShowProjectsPage(false); // hide projects only if visible
-    }
+    };
 
     const handlgeProjectButton = () => {
         setShowProjectsPage(true)
         setShowAboutPage(false) // hide about only if visible
+    };
+
+    const handleModeToggle = () => {
+        setIsDarkMode(!setIsDarkMode);
     }
+
 
     return (
         <div className="card">

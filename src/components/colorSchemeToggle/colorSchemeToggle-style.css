@@ -1,0 +1,22 @@
+.color-scheme-toggle {
+    background-color: #ffffff;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.color-scheme-toggle:hover {
+    background-color: #dddddd;
+}
+
+.color-scheme-toggle.dark-mode {
+    background-color: #333333; /* Dark mode background color */
+    color: #ffffff; /* Dark mode text color */
+  }
+  
+  .color-scheme-toggle.dark-mode:hover {
+    background-color: #555555; /* Dark mode hover background color */
+  }

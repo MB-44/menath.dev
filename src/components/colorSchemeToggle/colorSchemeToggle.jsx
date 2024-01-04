@@ -2,7 +2,7 @@ import React from "react";
 import './colorSchemeToggle-style.css';
 
 
-const colorSchemeToggle = ({ isDarkMode, ontoggle}) => {
+const ColorSchemeToggle = ({ isDarkMode, ontoggle}) => {
     return (
         <button className="color-scheme-toggle" onClick={ontoggle}>
             {isDarkMode ? "Light Mode" : "Dark Mode"}
@@ -10,4 +10,4 @@ const colorSchemeToggle = ({ isDarkMode, ontoggle}) => {
     );
 }
 
-export default colorSchemeToggle;
+export default ColorSchemeToggle;
