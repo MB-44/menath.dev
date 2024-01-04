@@ -6,7 +6,7 @@ import "./profileCard.css"
 function ProfileCard () {
 
     const [showAboutPage, setShowAboutPage] = useState(false);
-    
+    // const [showProjectsPage,]
 
     const handleAboutButton = () => {
         setShowAboutPage(true);
@@ -15,13 +15,11 @@ function ProfileCard () {
 
     return (
         <div className="card">
-        <div className="content">
-        {showAboutPage ? (
+            <div className="content">
+                {showAboutPage ? (
                     <AboutPage/>
-                ) : (
-
+                        ) : (
                     <>
-
                         <h2>Hi, I'm Menath</h2>
                         <h3>Also known as MB-44</h3>
                         <p>I'm a game developer</p>
@@ -30,15 +28,11 @@ function ProfileCard () {
                             <button className="about_button" onClick={handleAboutButton}>About Menath</button>
                             <button className="projects_button">Projects</button>
                         </div>
-                                                     
-                            
-                    
-
                     </>
                 )}
             </div>
                 {!showAboutPage && <img src={profile_pic} className="Img" alt="" />}
-            </div>
+        </div>
     );
 }
 
