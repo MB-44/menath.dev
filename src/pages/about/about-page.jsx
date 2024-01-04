@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import './about.css'
+import './about-page.css';
 
 function AboutPage () {
 
@@ -14,9 +14,7 @@ function AboutPage () {
                 <br />
             </div>
         </div>
-
     );
-
 }
 
 export default AboutPage;
