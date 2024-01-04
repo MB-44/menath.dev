@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import profile_pic from "../../assets/profile-pic.jpg";
 import AboutPage from "../../pages/about/about-page";
 import ProjectsPage from "../../pages/projects/project-page";
-import ColorSchemeToggle from "../colorSchemeToggle/colorSchemeToggle";
+// import ColorSchemeToggle from "../colorSchemeToggle/colorSchemeToggle";
 import "./profileCard.css"
 
 function ProfileCard () {
@@ -27,6 +27,7 @@ function ProfileCard () {
 
 
     return (
+        // {`card ${isDarkMode ? 'dark-mode' : 'light-mode'}`}
         <div className="card">
             <div className="content">
             {showAboutPage ? (
@@ -46,6 +47,7 @@ function ProfileCard () {
                             <button className="projects_button" onClick={handlgeProjectButton}>
                                 Projects
                             </button>
+                            {/* < ColorSchemeToggle isDarkMode={isDarkMode} ontoggle={handleModeToggle}/> */}
                         </div>
                     </>
                 )}

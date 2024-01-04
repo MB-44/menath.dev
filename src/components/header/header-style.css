@@ -118,3 +118,16 @@ nav {
         display: flex;
     }
 }
+
+@media (max-width: 1439) {
+    
+}
+
+
+/* desktop - 1440
+    tablet - (1439 - 1270)
+    tablet v2 - (1269 - 1024)
+    h phone - 1023 - 876
+    v phone - 875 - 400
+    phone - 399
+*/
