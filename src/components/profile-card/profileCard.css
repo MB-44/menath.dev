@@ -78,7 +78,8 @@
     transition: background-color 0.1s ease;
 }
 
-
+/* note note */
+/* about button hover active */
 .about_button:hover {
     background-color: #5771a4;
 }
@@ -86,13 +87,15 @@
     background-color: #1c3f73;
 }
 
-
+/* note note */
+/* projects button hover and active */
 .projects_button:hover {
     background-color: #f2f2f2;
 }
 .projects_button:active {
     background-color: #c7c7c9;
 }
+
 
 @media (max-width: 600px) {
     .card {
