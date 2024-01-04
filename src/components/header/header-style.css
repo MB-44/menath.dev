@@ -4,8 +4,9 @@
     margin-top: -35px;
 }
 
-
 .header-title {
+    margin-right: auto;
+    text-align: left;
     font-size: 27px;
     color: #212529;
     font-weight: bold;
@@ -18,7 +19,6 @@ nav {
     justify-content: space-between;
     padding: 20px 90px;
 }
-
 
 .navbar-items li a {
     font-size: 18px;
@@ -38,12 +38,12 @@ nav {
 }
 
 .navbar-items button:hover {
-    background-color:rgb(226, 230, 234);
+    background-color:#e2e6ea;
 }
 
 .navbar-items button:active {
-    background-color: rgb(215, 219, 223);
-    color: rgba(72, 72, 176, 0.872);
+    background-color: #d7dbdf;
+    color: #4848b0de;
 }
 
 
@@ -102,17 +102,15 @@ nav {
         font-size: 20px;
         color: #212529;
         font-family: monospace;
+        text-align: right;
     }
-
 }
 
 @media (min-width: 769px) {
     .navbar-toggle {
         display: none;
     }
-
     .navbar-items {
         display: flex;
     }
 }
-
