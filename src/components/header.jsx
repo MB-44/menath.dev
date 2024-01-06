@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { 
     Header, 
     Container, 
@@ -6,28 +6,29 @@ import {
     Group,
     createStyles,
     Paper, Text,
+    xl, sm,
     Transition 
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { useRouter } from 'next/router';
 import Link from "next/link";
 // need to import color scheme toggle
-import "./header-style.css";
+// import "./header-style.css";
 import { ToggleButton, collapseClasses } from '@mui/material';
 
 const useStyles = createStyles((theme) => ({
     body: {
         position: 'relative',
         zIndex: 1,
-        marginBottom: theme.spacing.xl * 4,
+        marginBottom: theme.spacing[xl] * 4,
         borderBottom: `0px solid`,
 
         '@media (max-width: 768px)': {
-            marginBottom: theme.spacing.xl * 2,
+            marginBottom: theme.spacing[xl] * 2,
         },
 
         '@media (max-width: 500px)': {
-            marginBottom: theme.spacing.xl * 0
+            marginBottom: theme.spacing[xl] * 0
         },
     },
 
