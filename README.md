@@ -7,4 +7,4 @@ This repository contains source code and configuration for my website built usin
 
 ### Frameworks
 
-***Mantine:***
+***-Mantine:*** Mantine is a library of react components. more -----
