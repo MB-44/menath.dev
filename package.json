@@ -3,41 +3,44 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@mantine/core": "^5.10.5",
-    "@mantine/hooks": "^5.10.5",
-    "@mantine/carousel": "5.10.5",
     "@emotion/react": "^11.9.3",
     "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.11.0",
+    "@mantine/carousel": "5.10.5",
+    "@mantine/core": "^5.10.5",
     "@mantine/dates": "5.10.5",
     "@mantine/form": "^5.4.0",
+    "@mantine/hooks": "^5.10.5",
     "@mantine/next": "5.2.7",
     "@mantine/notifications": "5.10.5",
     "@mantine/nprogress": "^5.6.2",
     "@mantine/prism": "^5.7.1",
+    "@mui/material": "^5.15.2",
     "@next/bundle-analyzer": "^12.3.1",
     "@next/font": "^13.0.2",
     "@tabler/icons": "^1.78.1",
-    "@mui/material": "^5.15.2",
+    "chokidar": "^3.0.0",
     "cookies-next": "^2.1.1",
+    "core-js": "^3.23.3",
     "dayjs": "^1.11.0",
     "embla-carousel-react": "^7.0.0",
     "gray-matter": "^4.0.3",
+    "left-pad": "1.3.0",
     "next": "12.2.5",
     "next-mdx-remote": "^4.1.0",
     "next-seo": "^5.13.0",
     "next-sitemap": "^3.1.30",
+    "path": "^0.12.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "reading-time": "^1.5.0",
-    "chokidar": "^3.0.0",
-    "core-js": "^3.23.3",
-    "left-pad": "1.3.0",
     "react-scripts": "^5.0.1",
+    "reading-time": "^1.5.0",
+    "util": "^0.12.5",
     "web-vitals": "^2.1.4"
   },
-  
   "devDependencies": {
     "@babel/core": "^7.17.8",
+    "@rollup/plugin-terser": "^0.4.4",
     "@testing-library/dom": "^8.12.0",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^13.0.0",
@@ -47,13 +50,11 @@
     "@types/react": "18.0.16",
     "@typescript-eslint/parser": "^5.36.2",
     "babel-loader": "^8.2.4",
-    "@rollup/plugin-terser": "^0.4.4",
     "html-webpack-plugin": "^5.6.0",
-    "ts-jest": "^27.1.4",
+    "jest": "^27.5.1",
     "prettier": "^2.6.2",
-    "jest": "^27.5.1"
+    "ts-jest": "^27.1.4"
   },
-
   "babel": {
     "plugins": [
       "@babel/plugin-transform-numeric-separator",
@@ -88,5 +89,4 @@
       "last 1 safari version"
     ]
   }
-  
 }

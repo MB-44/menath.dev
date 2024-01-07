@@ -1,0 +1,38 @@
+{
+    "data": [
+        {
+            "title": "pages",
+            "links": [
+                {
+                    "label": "about",
+                    "link": "/about"
+                },
+                {
+                    "label": "projects",
+                    "link": "/projects"
+                },
+                {
+                    "label": "blogs",
+                    "link": "/blogs"
+                },
+                {
+                    "label": "",
+                    "link": "#"
+                }
+            ]
+        },
+        {
+            "title": "social",
+            "links": [
+                {
+                    "label": "linkedin",
+                    "link": "https://www.linkedin.com/in/itsmenathbadde/"
+                },
+                {
+                    "label": "github",
+                    "link": "https://github.com/MB-44"
+                }
+            ]
+        }
+    ]
+}
