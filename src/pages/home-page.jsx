@@ -1,18 +1,28 @@
 import React from "react";
-import Header from "../../components/header/header";
-import "./home-page.css";
-import ProfileCard from "../../components/profile-card/profileCard";
-// import { style } from "@mui/system";
+import PageHeader from "../components/header";
+import PageBody from "../components/body";
+import { Space, Container } from "@mantine/core";
+import { SocialProfileJsonLd } from "next-seo";
 
-function HomePage() {
+export default function HomePage() {
     return (
+        <Container>
         <>
-        <Header />
+            <SocialProfileJsonLd
+                type="Person"
+                name="Menath Lakvindu"
+                url="https://menath.dev"
+                sameAs={[
+                    "https://www.linkedin.com/in/itsmenathbadde/",
+                    "https://github.com/MB-44"
+                ]}/>
 
-        <ProfileCard />
-        
+                <PageHeader/>
+                <Space h={100} />
+
+
         </>
+        
+        </Container>
     );
 }
-
-export default HomePage;
