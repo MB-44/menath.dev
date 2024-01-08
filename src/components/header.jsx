@@ -11,9 +11,9 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import { useRouter } from 'next/router';
 import Link from "next/link";
-// need to import color scheme toggle
-// import "./header-style.css";
 import { ToggleButton } from '@mui/material';
+import ColorToggle from './colorToggle';
+// import "./header-style.css";
 
 const useStyles = createStyles((theme) => ({
     body: {
@@ -121,7 +121,7 @@ function PageHeader() {
                </Text>
                <div className={classes.burger}>
                    <div className={classes.hide}>
-                       {/* color scheme toggle */}
+                       <ColorToggle/>
                    </div>
                </div>
             </Group>
@@ -170,7 +170,7 @@ function PageHeader() {
                                 Blogs 
                             </a>
                     </Link>
-                {/* need to add colorscheme toggle */}
+                <ColorToggle/>
                 </Group>
                 
                 <Burger 

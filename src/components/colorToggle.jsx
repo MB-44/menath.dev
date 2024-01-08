@@ -44,4 +44,4 @@ function ColorToggle() {
 
 }
 
-export default ColorToggle();
+export default ColorToggle;
