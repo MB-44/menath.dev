@@ -2,9 +2,17 @@ import { IconSun, IconMoonStars, IconMoon } from "@tabler/icons";
 import { ActionIcon, Group, useMantineColorScheme, createStyles } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
-    dark_mode_bt: {
+    darkmodebutton: {
+        '&:hover': {
+            transform: theme.colorScheme === 'dark' ? 'rotate(180deg)' : 'rotate(0deg)',
+            transition: 'transform 0.3s ease-in-out',
+        },
 
-    }
+        '&:active': {
+            transform: theme.colorScheme === "dark" ? 'rotate(0deg)' : 'rotate(180deg)',
+            transition: 'transform 0.3s ease-in-out',
+        },
+    },
 }))
 
 function ColorToggle() {
