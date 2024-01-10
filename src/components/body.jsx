@@ -34,6 +34,19 @@ const useStyles = createStyles((theme) => ({
     padding: theme.spacing.md,
   },
 
+  titlemain: {
+    fontFamily: `Graycliff CF`,
+    color: theme.colorScheme === 'dark' ? theme.colors.gray[1] : theme.colors.dark,
+    fontSize: 36,
+    lineHeight: 1.1,
+    fontWeight: 800,
+    marginTop: theme.spacing.md,
+    marginBottom: theme.spacing.xl,
+    [theme.fn.smallerThan('xs')]: {
+      fontSize: 18,
+    },
+  },
+
   leftwrapper: {
     display: 'flex',
     alignItems: 'center',
@@ -62,7 +75,7 @@ export function PageBody() {
 
     return(
         <div id="highlights">
-          <Text></Text>
+          <Text className={classes.title}></Text>
         </div>
     );
 }
