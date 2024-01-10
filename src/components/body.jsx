@@ -75,7 +75,7 @@ export function PageBody() {
 
     return(
         <div id="highlights">
-          <Text className={classes.title}></Text>
+          <Text className={classes.titlemain}>Highlights</Text>
         </div>
     );
 }
