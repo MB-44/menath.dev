@@ -1,12 +1,23 @@
 import React from "react";
 import PageHeader from "../components/header";
-import PageBody from "../components/body";
-import { Space, Container } from "@mantine/core";
-import { SocialProfileJsonLd } from "next-seo";
-import { useRouter } from "next/router";
+import Test from "../components/test";
+// import PageBody from "../components/body";
+// import { Space, Container } from "@mantine/core";
+// import { SocialProfileJsonLd } from "next-seo";
+// import { useRouter } from "next/router";
 
-export default function HomePage() {
+function HomePage() {
     return (
+        <>
+            <PageHeader/>
+            {/* <Test/> */}
+        </>
+    );
+}
+
+export default HomePage;
+
+
         // <Container>
         // <>
         //     <SocialProfileJsonLd
@@ -23,10 +34,3 @@ export default function HomePage() {
         // </>
         
         // </Container>
-
-
-        <>
-            <PageHeader/>
-        </>
-    );
-}
