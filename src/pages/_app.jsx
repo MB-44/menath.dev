@@ -17,6 +17,5 @@ export default function App(props) {
         setColorScheme(nextColorScheme);
 
         setCookie('mantine-color-scheme', nextColorScheme, {maxAge: 60 * 60 * 24 * 30});
-
     }
 }

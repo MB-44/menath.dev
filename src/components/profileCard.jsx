@@ -10,7 +10,7 @@ const useStyles = createStyles((theme) => ({
         marginLeft: 'auto',
         marginRight: 'auto',
         paddingTop: '20px',
-
+        
         '@media (max-width: 768px)': {
             maxWidth: '200px',
         },

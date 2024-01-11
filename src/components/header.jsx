@@ -8,8 +8,8 @@ import {
     Paper, Text,
     Transition 
 } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
 import { useRouter } from 'next/router';
+import { useDisclosure } from '@mantine/hooks';
 import Link from "next/link";
 import { ToggleButton } from '@mui/material';
 import ColorToggle from './colorToggle';
@@ -112,6 +112,13 @@ function PageHeader() {
     const { classes, cx } = useStyles();
     const router = useRouter();
 
+    // console.log("Router: ",router);
+    // console.log("Pathname: ",router.pathname);
+
+    if (!router) {
+        return null;
+    }
+
     return(
      <Header height={70} className={classes.body}>
         <Container className={classes.header}>
@@ -126,112 +133,112 @@ function PageHeader() {
                </div>
             </Group>
 
-            <Group spacing={5} className={classes.links}>
-                <Link href="/">
-                   <a 
-                       key="Home"
-                       className = {cx(classes.links, router.pathname == "/" ? classes.linkActive: '')}
-                       onClick = {(e) => {
-                           close();
-                       }}>
-                           Home
-                    </a>
-                </Link>
+     <Group spacing={5} className={classes.links}>
+        <Link href="../pages/home.jsx">
+           <a 
+               key="Home"
+               className = {cx(classes.links, router.pathname == "/" ? classes.linkActive: '')}
+               onClick = {(e) => {
+                   close();
+               }}>
+                   Home
+            </a>
+        </Link>
 
-                <Link href="/about">
-                    <a 
-                      key="About"
-                      className={cx(classes.link, router.pathname == "/about" ? classes.linkActive: '')}
-                      onClick={(e) => {
-                          close();
-                      }}>
-                          About 
-                    </a>
-                </Link>
+        <Link href="../pages/about.jsx">
+            <a 
+              key="About"
+              className={cx(classes.link, router.pathname == "/about" ? classes.linkActive: '')}
+              onClick={(e) => {
+                  close();
+              }}>
+                  About 
+            </a>
+        </Link>
                     
-                    <Link href="/projects">
-                        <a
-                            key="Projects"
-                            className={cx(classes.link, router.pathname == "/projects" ? classes.linkActive: '')}
-                            onClick={(e) => {
-                                close();
-                            }}>
-                                Projects
-                            </a>
-                    </Link>
+        <Link href="../pages/projects.jsx">
+            <a
+                key="Projects"
+                className={cx(classes.link, router.pathname == "/projects" ? classes.linkActive: '')}
+                onClick={(e) => {
+                    close();
+                }}>
+                    Projects
+                </a>
+        </Link>
                     
-                    <Link href="/blogs">
-                        <a 
-                            key="Blogs"
-                            className={cx(classes.link, router.pathname == "/blogs" ? classes.linkActive: '')}
-                            onClick={(e) => {
-                                close();
-                            }}>
-                                Blogs 
-                            </a>
-                    </Link>
-                <ColorToggle/>
-                </Group>
+        <Link href="../pages/blogs.jsx">
+            <a 
+                key="Blogs"
+                className={cx(classes.link, router.pathname == "/blogs" ? classes.linkActive: '')}
+                onClick={(e) => {
+                    close();
+                }}>
+                    Blogs 
+                </a>
+        </Link>
+    <ColorToggle/>
+    </Group>
                 
-                <Burger 
-                    opened={opened} 
-                    onClick={toggle} 
-                    className={classes.burger}
-                    size="sm"
-                    aria-label={ToggleButton}
-                    />
+        <Burger 
+            opened={opened} 
+            onClick={toggle} 
+            className={classes.burger}
+            size="sm"
+            aria-label={ToggleButton}
+            />
 
-                <Transition transition={'pop-top-right'} duration={200} mounted={opened}>
-                            {(styles) => (
-                                <Paper className={classes.dropdown} withBorder style={styles}>
-                                    <Link href="/">
-                                        <a 
-                                            key="Home"
-                                            className={cx(classes.link, router.pathname == "/" ? classes.linkActive: '')}
-                                            onClick={(e) => {
-                                                close();
-                                            }}>
-                                                Home 
-                                            </a>
-                                    </Link>
-
-                                    <Link href="/about">
-                                        <a 
-                                            key="About"
-                                            className={cx(classes.link, router.pathname == "/about" ? classes.linkActive: '')}
-                                            onClick={(e) => {
-                                                close();
-                                            }}>
-                                                About 
-                                            </a>
-                                    </Link>
-
-                    <Link href="/projects">
-                       <a 
-                           key="Projects"
-                           className={cx(classes.link, router.pathname == "/projects" ? classes.linkActive: '')}
-                           onClick={(e) => {
-                               close();
-                           }}>
-                               Projects 
-                           </a>
-                    </Link>
-
-                    <Link href="/blogs">
-                        <a 
-                            key="Blogs"
-                            className={cx(classes.link, router.pathname == "/blogs" ? classes.linkActive: '')}
-                            onClick={(e) => {
-                                close();
+        <Transition transition={'pop-top-right'} duration={200} mounted={opened}>
+            {(styles) => (
+                <Paper className={classes.dropdown} withBorder style={styles}>
+                    <Link href="../pages/home.jsx">
+                    <a 
+                        key="Home"
+                        className={cx(classes.link, router.pathname == "/" ? classes.linkActive: '')}
+                        onClick={(e) => {
+                            close();
                         }}>
-                            Blogs
+                            Home 
                         </a>
                     </Link>
-                </Paper>
-                )}
-            </Transition>
-        </Container>
-    </Header>
+
+        <Link href="../pages/about.jsx">
+            <a 
+                key="About"
+                className={cx(classes.link, router.pathname == "/about" ? classes.linkActive: '')}
+                onClick={(e) => {
+                    close();
+                }}>
+                    About 
+                </a>
+        </Link>
+
+        <Link href="../pages/projects.jsx">
+           <a 
+               key="Projects"
+               className={cx(classes.link, router.pathname == "/projects" ? classes.linkActive: '')}
+               onClick={(e) => {
+                   close();
+               }}>
+                   Projects 
+               </a>
+        </Link>
+
+        <Link href="../pages/blogs.jsx">
+            <a 
+                key="Blogs"
+                className={cx(classes.link, router.pathname == "/blogs" ? classes.linkActive: '')}
+                onClick={(e) => {
+                    close();
+            }}>
+                Blogs
+            </a>
+        </Link>
+    </Paper>
+    )}
+        </Transition>
+    </Container>
+  </Header>
     );
 }
 
