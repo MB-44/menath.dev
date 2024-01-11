@@ -1,7 +1,8 @@
 import React from "react";
-import Link from "next/link";
-import { useMantineColorScheme, createStyles } from "@mantine/core";
+import { useMantineColorScheme, createStyles, Group } from "@mantine/core";
 import { Header, Container, Text } from "@mantine/core";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const useStyles = createStyles((theme) => ({
     body: {
@@ -42,9 +43,9 @@ const useStyles = createStyles((theme) => ({
     },
 
     title: {
-        fontWeight: 700,
+        fontFamily: `Greycliff CF`,
         fontSize: 26,
-        fontFamily: 'Graycliff CF',
+        fontWeight: 700,
         color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.gray[9],
     },
 }))
@@ -52,14 +53,19 @@ const useStyles = createStyles((theme) => ({
 
 
 function PageHeader() {
+    
     const { classes } = useStyles();
-    const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+    const router = useRouter();
+    // const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   
     return (
       <Header height={70} className={classes.body}>
         <Container className={classes.header}>
-          <Text className={classes.title}>menath.dev</Text>
-          {/* Add ColorToggle here */}
+            
+                <Text className={classes.title}>menath.dev</Text>
+
+
+
         </Container>
       </Header>
     );

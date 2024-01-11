@@ -26,7 +26,7 @@ function ColorToggle() {
                 onClick={() => toggleColorScheme()}
                 aria-label="darl/light mode toggle"
                 size={37}
-                sx={(theme) => ({
+                sx={(theme)=>({
                     backgroundColor: 
                         theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
                     color:

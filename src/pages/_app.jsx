@@ -2,10 +2,10 @@ import React from "react";
 import { ColorSchemeProvider } from "@mantine/core";
 import App from "../App";
 
-function MyApp({ Component, pageProps }) {
+function MyApp( ) {
     return(
         <ColorSchemeProvider>
-            <App {...pageProps}/>
+            <App/>
         </ColorSchemeProvider>
     );
 }
