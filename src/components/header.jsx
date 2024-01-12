@@ -16,7 +16,7 @@ import Link from "next/link";
 // import "./header-style.css";
 
 const useStyles = createStyles((theme) => ({
-    body: {
+    root: {
         position: 'relative',
         zIndex: 1,
         marginBottom: theme.spacing.xl * 4,
@@ -47,10 +47,10 @@ const useStyles = createStyles((theme) => ({
     },
 
     header: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
         height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
     },
 
     links: {
@@ -60,9 +60,12 @@ const useStyles = createStyles((theme) => ({
     },
 
     burger: {
-        [theme.fn.smallerThan('sm')]: {
+        // [theme.fn.smallerThan('sm')]: {
+        //     display: 'none',
+        // },
+        [theme.fn.largerThan('sm')]: {
             display: 'none',
-        },
+        }
     },
 
     hide: {
@@ -72,7 +75,7 @@ const useStyles = createStyles((theme) => ({
     },
 
     link: {
-        fontFamily: 'Greycliff CF',
+        fontFamily: '"Graycliff CF", sans-serif',
         display: 'block',
         lineHeight: 1,
         padding: '8px 12px',
@@ -84,6 +87,11 @@ const useStyles = createStyles((theme) => ({
         
         '&:hover': {
             backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
+            textDecoration: 'none', 
+        },
+
+        '&:focus': {
+            outline: 'none',
         },
 
         [theme.fn.smallerThan('sm')]: {
@@ -96,7 +104,7 @@ const useStyles = createStyles((theme) => ({
     title: {
         fontWeight: 700,
         fontSize: 26,
-        fontFamily: 'Graycliff CF',
+        fontFamily: '"Graycliff CF", sans-serif',
         color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.gray[9],
     },
 
@@ -135,11 +143,11 @@ function PageHeader() {
     }, []);
 
     return(
-     <Header height={70} className={classes.body}>
+     <Header height={70} className={classes.root}>
         <Container className={classes.header}>
             <Group spacing="xl">
                <Text className={classes.title}>
-                   {'menath.dev'}
+                   menath.dev
                </Text>
                <div className={classes.burger}>
                    <div className={classes.hide}>
@@ -153,7 +161,7 @@ function PageHeader() {
            <a 
                key="Home"
                className = {cx(classes.links, currentPath == "/" ? classes.linkActive: '')}
-               onClick = {(e) => {
+               onClick = {(event) => {
                    close();
                }}>
                    Home
@@ -164,7 +172,7 @@ function PageHeader() {
             <a 
               key="About"
               className={cx(classes.link, currentPath == "/about" ? classes.linkActive: '')}
-              onClick={(e) => {
+              onClick={(event) => {
                   close();
               }}>
                   About 
@@ -175,7 +183,7 @@ function PageHeader() {
             <a
                 key="Projects"
                 className={cx(classes.link, currentPath == "/projects" ? classes.linkActive: '')}
-                onClick={(e) => {
+                onClick={(event) => {
                     close();
                 }}>
                     Projects
@@ -186,75 +194,69 @@ function PageHeader() {
             <a 
                 key="Blogs"
                 className={cx(classes.link, currentPath == "/blogs" ? classes.linkActive: '')}
-                onClick={(e) => {
+                onClick={(event) => {
                     close();
                 }}>
                     Blogs 
                 </a>
         </Link>
-    <ColorToggle/>
-    </Group>
-                
-        <Burger 
-            opened={opened} 
-            onClick={toggle} 
-            className={classes.burger}
-            size="sm"
-            aria-label={ToggleButton}
-            />
+     <ColorToggle/>
+    </Group>    
+        
+    <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" aria-label="togglebutton" />
 
-        <Transition transition={'pop-top-right'} duration={200} mounted={opened}>
-            {(styles) => (
-                <Paper className={classes.dropdown} withBorder style={styles}>
-                    <Link href="/">
-                    <a 
-                        key="Home"
-                        className={cx(classes.link, currentPath == "/" ? classes.linkActive: '')}
-                        onClick={(e) => {
-                            close();
-                        }}>
-                            Home 
-                        </a>
-                    </Link>
+        <Transition transition="pop-top-right" duration={200} mounted={opened}>
+        {(styles) => (
+        <Paper className={classes.dropdown} withBorder style={styles}>
+        <Link href="/">
+            <a 
+              key="Home"
+              className={cx(classes.link, currentPath == "/" ? classes.linkActive: '')}
+              onClick={(event) => {
+                 close();
+            }}>
+                Home 
+            </a>
+        </Link>
 
         <Link href="/about">
             <a 
-                key="About"
-                className={cx(classes.link, currentPath == "/about" ? classes.linkActive: '')}
-                onClick={(e) => {
-                    close();
-                }}>
-                    About 
-                </a>
+             key="About"
+             className={cx(classes.link, currentPath == "/about" ? classes.linkActive: '')}
+             onClick={(event) => {
+                close();
+            }}>
+                About 
+            </a>
         </Link>
 
         <Link href="/projects">
            <a 
-               key="Projects"
-               className={cx(classes.link, currentPath == "/projects" ? classes.linkActive: '')}
-               onClick={(e) => {
-                   close();
-               }}>
-                   Projects 
-               </a>
+             key="Projects"
+             className={cx(classes.link, currentPath == "/projects" ? classes.linkActive: '')}
+             onClick={(event) => {
+                close();
+            }}>
+               Projects 
+            </a>
         </Link>
 
         <Link href="/blogs">
             <a 
-                key="Blogs"
-                className={cx(classes.link, currentPath == "/blogs" ? classes.linkActive: '')}
-                onClick={(e) => {
-                    close();
+             key="Blogs"
+             className={cx(classes.link, currentPath == "/blogs" ? classes.linkActive: '')}
+             onClick={(event) => {
+                close();
             }}>
                 Blogs
             </a>
         </Link>
-    </Paper>
-    )}
-        </Transition>
+       </Paper>
+      )}
+     </Transition>
     </Container>
   </Header>
-    );
+ );
 }
 
 export default PageHeader;

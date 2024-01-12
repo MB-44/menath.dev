@@ -1,5 +1,6 @@
-import { ActionIcon, Group, useMantineColorScheme, createStyles } from "@mantine/core";
+import { ActionIcon, Group, useMantineColorScheme, createStyles, withMantineTheme } from "@mantine/core";
 import { IconSun, IconMoonStars } from "@tabler/icons";
+
 
 const useStyles = createStyles((theme) => ({
     darkmodebutton: {
@@ -15,9 +16,9 @@ const useStyles = createStyles((theme) => ({
     },
 }))
 
-export default function ColorToggle() {
+export default function ColorToggle({ theme }) {
     const { colorScheme, toggleColorScheme } = useMantineColorScheme(); 
-    const { classes } = useStyles();
+    const { classes } = useStyles({ theme });
 
     return (
         <Group position="center">
