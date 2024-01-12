@@ -1,22 +1,33 @@
-import React from "react";
-import { useMantineColorScheme, createStyles, Group } from "@mantine/core";
-import { Header, Container, Text } from "@mantine/core";
+import React, { useEffect } from 'react';
+import { 
+    Header, 
+    Container, 
+    Burger,    
+    Group,
+    createStyles,
+    Paper, Text,
+    Transition 
+} from '@mantine/core';
+import { useRouter } from 'next/router';
+import { useDisclosure } from '@mantine/hooks';
+import { ToggleButton } from '@mui/material';
+import ColorToggle from './colorToggle';
 import Link from "next/link";
-import { useRouter } from "next/router";
+// import "./header-style.css";
 
 const useStyles = createStyles((theme) => ({
     body: {
-        position:'relative',
+        position: 'relative',
         zIndex: 1,
         marginBottom: theme.spacing.xl * 4,
         borderBottom: `0px solid`,
-        
+
         '@media (max-width: 768px)': {
-            marginBottom: theme.spacing.xl * 2
+            marginBottom: theme.spacing.xl * 2,
         },
 
         '@media (max-width: 500px)': {
-            marginBottom: theme.spacing.xl * 0,
+            marginBottom: theme.spacing.xl * 0
         },
     },
 
@@ -42,32 +53,207 @@ const useStyles = createStyles((theme) => ({
         height: '100%',
     },
 
-    title: {
-        fontFamily: `Greycliff CF`,
-        fontSize: 26,
+    links: {
+        [theme.fn.smallerThan('sm')]: {
+            display: 'none',
+        },
+    },
+
+    burger: {
+        [theme.fn.smallerThan('sm')]: {
+            display: 'none',
+        },
+    },
+
+    hide: {
+        '@media (max-width: 309px)': {
+            display: 'none',
+        },
+    },
+
+    link: {
+        fontFamily: 'Greycliff CF',
+        display: 'block',
+        lineHeight: 1,
+        padding: '8px 12px',
+        borderRadius: theme.radius.sm,
+        textDecoration: 'none',
+        color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
+        fontSize: 15,
         fontWeight: 700,
+        
+        '&:hover': {
+            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
+        },
+
+        [theme.fn.smallerThan('sm')]: {
+            fontWeight: 400,
+            borderRadius: 0,
+            padding: theme.spacing.md,
+        },
+    },
+
+    title: {
+        fontWeight: 700,
+        fontSize: 26,
+        fontFamily: 'Graycliff CF',
         color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.gray[9],
+    },
+
+    linkActive: {
+        '&, &:hover': {
+            background: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
+        },
     },
 }))
 
-
-
 function PageHeader() {
-    
-    const { classes } = useStyles();
-    const router = useRouter();
-    // const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  
-    return (
-      <Header height={70} className={classes.body}>
+    const [ opened, { toggle, close }] = useDisclosure(false);
+    const { classes, cx } = useStyles();
+    const currentPath = typeof window !== "undefined" ? window.location.pathname : null;
+    // const router = useRouter();
+
+    // console.log("Router: ",router);
+    // console.log("Pathname: ",router.pathname);
+
+    // if (!router) {
+    //     return null;
+    // }
+
+    useEffect(() => {
+        const updatePath = () => {
+            if (typeof window !=="undefined") {
+                currentPath = window.location.pathname;
+            }
+        };
+
+        window.addEventListener("popstate",updatePath);
+
+        return () => {
+            window.removeEventListener("popstate", updatePath);
+        };
+    }, []);
+
+    return(
+     <Header height={70} className={classes.body}>
         <Container className={classes.header}>
-            
-                <Text className={classes.title}>menath.dev</Text>
+            <Group spacing="xl">
+               <Text className={classes.title}>
+                   {'menath.dev'}
+               </Text>
+               <div className={classes.burger}>
+                   <div className={classes.hide}>
+                       <ColorToggle/>
+                   </div>
+               </div>
+            </Group>
 
+     <Group spacing={5} className={classes.links}>
+        <Link href="/">
+           <a 
+               key="Home"
+               className = {cx(classes.links, currentPath == "/" ? classes.linkActive: '')}
+               onClick = {(e) => {
+                   close();
+               }}>
+                   Home
+            </a>
+        </Link>
 
+        <Link href="/about">
+            <a 
+              key="About"
+              className={cx(classes.link, currentPath == "/about" ? classes.linkActive: '')}
+              onClick={(e) => {
+                  close();
+              }}>
+                  About 
+            </a>
+        </Link>
+                    
+        <Link href="/projects">
+            <a
+                key="Projects"
+                className={cx(classes.link, currentPath == "/projects" ? classes.linkActive: '')}
+                onClick={(e) => {
+                    close();
+                }}>
+                    Projects
+                </a>
+        </Link>
+                    
+        <Link href="/blogs">
+            <a 
+                key="Blogs"
+                className={cx(classes.link, currentPath == "/blogs" ? classes.linkActive: '')}
+                onClick={(e) => {
+                    close();
+                }}>
+                    Blogs 
+                </a>
+        </Link>
+    <ColorToggle/>
+    </Group>
+                
+        <Burger 
+            opened={opened} 
+            onClick={toggle} 
+            className={classes.burger}
+            size="sm"
+            aria-label={ToggleButton}
+            />
 
-        </Container>
-      </Header>
+        <Transition transition={'pop-top-right'} duration={200} mounted={opened}>
+            {(styles) => (
+                <Paper className={classes.dropdown} withBorder style={styles}>
+                    <Link href="/">
+                    <a 
+                        key="Home"
+                        className={cx(classes.link, currentPath == "/" ? classes.linkActive: '')}
+                        onClick={(e) => {
+                            close();
+                        }}>
+                            Home 
+                        </a>
+                    </Link>
+
+        <Link href="/about">
+            <a 
+                key="About"
+                className={cx(classes.link, currentPath == "/about" ? classes.linkActive: '')}
+                onClick={(e) => {
+                    close();
+                }}>
+                    About 
+                </a>
+        </Link>
+
+        <Link href="/projects">
+           <a 
+               key="Projects"
+               className={cx(classes.link, currentPath == "/projects" ? classes.linkActive: '')}
+               onClick={(e) => {
+                   close();
+               }}>
+                   Projects 
+               </a>
+        </Link>
+
+        <Link href="/blogs">
+            <a 
+                key="Blogs"
+                className={cx(classes.link, currentPath == "/blogs" ? classes.linkActive: '')}
+                onClick={(e) => {
+                    close();
+            }}>
+                Blogs
+            </a>
+        </Link>
+    </Paper>
+    )}
+        </Transition>
+    </Container>
+  </Header>
     );
 }
 

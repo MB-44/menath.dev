@@ -1,6 +1,6 @@
 import React from "react";
 import PageHeader from "../components/header";
-import Test from "../components/test";
+// import Test from "../components/test";
 // import PageBody from "../components/body";
 // import { Space, Container } from "@mantine/core";
 // import { SocialProfileJsonLd } from "next-seo";
@@ -10,7 +10,7 @@ function HomePage() {
     return (
         <>
             <PageHeader/>
-            {/* <Test/> */}
+            
         </>
     );
 }

@@ -1,11 +1,10 @@
-import React from "react";
 import { ColorSchemeProvider } from "@mantine/core";
-import App from "../App";
 
-function MyApp( ) {
-    return(
+
+function MyApp({ Component, pageProps}) {
+    return (
         <ColorSchemeProvider>
-            <App/>
+            <Component {...pageProps}/>
         </ColorSchemeProvider>
     );
 }
