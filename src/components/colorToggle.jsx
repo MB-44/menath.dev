@@ -1,5 +1,5 @@
-import { IconSun, IconMoonStars, IconMoon } from "@tabler/icons";
 import { ActionIcon, Group, useMantineColorScheme, createStyles } from "@mantine/core";
+import { IconSun, IconMoonStars } from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({
     darkmodebutton: {
@@ -15,33 +15,30 @@ const useStyles = createStyles((theme) => ({
     },
 }))
 
-function ColorToggle() {
-    const { classes } = useStyles();
+export default function ColorToggle() {
     const { colorScheme, toggleColorScheme } = useMantineColorScheme(); 
+    const { classes } = useStyles();
 
     return (
         <Group position="center">
             <ActionIcon 
                 radius="xl" 
                 onClick={() => toggleColorScheme()}
-                aria-label="darl/light mode toggle"
+                aria-label="dark/light mode toggle"
                 size={37}
-                sx={(theme)=>({
+                sx={(theme) => ({
                     backgroundColor: 
                         theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
                     color:
                         theme.colorScheme === "dark" ? theme.colors.yellow[4] : theme.colors.blue[6],
                 })} 
                 >
-                {colorScheme === "dark" ? (
-                    <IconSun className={classes.darkmodebutton} size={24} stroke={2.5}/>
-              ): (
-                <IconMoonStars className={classes.darkmodebutton} size={24} stroke={2.5}/>
+                {colorScheme === 'dark' ? (
+                    <IconSun className={classes.darkmodebutton} size={24} stroke={2.5} />
+              ) : (
+                <IconMoonStars className={classes.darkmodebutton} size={24} stroke={2.5} />
                 )}
             </ActionIcon>
         </Group>
     );
-
 }
-
-export default ColorToggle;
