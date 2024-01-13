@@ -1,9 +1,51 @@
 import { createStyles, Text, Button, Group, Grid, Space } from "@mantine/core";
 import Link from "next/link";
 import Image from "next/image";
-import { IconSpacingVertical } from "@tabler/icons";
+// import { IconSpacingVertical } from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({
+    title: {
+        color: theme.colorScheme === "dark" ? theme.colors.gray[0] : theme.colors.dark[9],
+        lineHeight: 1,
+        fontSize: 35,
+        fontWeight: 800,
+        marginBottom: theme.spacing.sm,
+        paddingTop: theme.spacing.xl * 2,
+        fontFamily: `Greycliff CF`,
+        [theme.fn.smallerThan('sm')]: {
+            paddingTop: theme.spacing.xl * 1,
+        },
+
+        '@media (max-width: 500px)': {
+            fontSize: 33,
+        },
+    },
+
+    p: {
+        fontFamily: `Greycliff CF`,
+        color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.gray[9],
+        fontSize: 17,
+        lineHeight: 1.2,
+        letterSpacing: 0.9,
+        fontWeight: 500,
+        [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+            fontSize: 16,
+        },
+    },
+    
+    p2: {
+        letterSpacing: 0.9,
+        fontSize: 16,
+        lineHeight: 1.4,
+        fontWeight: 400,
+    },
+
+    flex: {
+        [theme.fn.smallerThan('xs')]: {
+            flex: 1,
+        },
+    },
+
     image: {
         maxWidth: '220px',
         maxHeight: '220px',
@@ -20,6 +62,7 @@ const useStyles = createStyles((theme) => ({
             maxWidth: '60%'
         }
     },
+
     mobile: {
         marginTop: 60,
         display: 'none',
@@ -27,6 +70,7 @@ const useStyles = createStyles((theme) => ({
             display: 'block'
         }
     },
+
     display: {
         display: 'block',
         '@media (max-width: 768px)': {
