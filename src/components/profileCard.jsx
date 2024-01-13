@@ -49,11 +49,41 @@ function ProfileCard() {
                     <Text className={classes.p2}>trying to expand tech industry in Sri Lanka</Text>
 
                     <Space h="sm"/>
-                    
+
+                    <Group>
+                        <Link href="/about" passHref>
+                            <Button variant="gradient" gradient={{from: 'indigo', to: 'cyan'}} className={classes.flex}>
+                                About Me
+                            </Button>
+                        </Link>
+                        <Link href="/projects">
+                            <Button variant="default" className={classes.flex}>
+                                Projects
+                            </Button>
+                        </Link>
+                    </Group>
+
+                </Grid.Col>
+
+                <Grid.Col sm={5} lg={3}>
+                    <div className={classes.image}>
+                        <Image src="../assets/profile-pic.jpg"
+                            alt="menath"
+                            width="250"
+                            height="250"
+                            priority={true}
+                            style={{borderRadius: '50%'}}
+                        />
+                    </div>
                 </Grid.Col>
             </Grid> 
-                {/* image, title, para, need to add */}
         </div>
+
+        <div className={classes.mobile}></div>
+
+
+
+
     </div>
     );
 }
