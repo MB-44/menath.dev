@@ -8,11 +8,11 @@ import {
     Paper, Text,
     Transition 
 } from '@mantine/core';
-// import { useRouter } from 'next/router';
 import { useDisclosure } from '@mantine/hooks';
-// import { ToggleButton } from '@mui/material';
 import ColorToggle from './colorToggle';
 import Link from "next/link";
+// import { ToggleButton } from '@mui/material';
+// import { useRouter } from 'next/router';
 // import "./header-style.css";
 
 const useStyles = createStyles((theme) => ({
@@ -119,6 +119,7 @@ function PageHeader() {
     const [ opened, { toggle, close }] = useDisclosure(false);
     const { classes, cx } = useStyles();
     const currentPath = typeof window !== "undefined" ? window.location.pathname : null;
+    
     // const router = useRouter();
 
     // console.log("Router: ",router);
@@ -160,7 +161,7 @@ function PageHeader() {
         <Link href="/">
            <a 
                key="Home"
-               className = {cx(classes.links, currentPath == "/" ? classes.linkActive: '')}
+               className = {cx(classes.link, currentPath == "/" ? classes.linkActive: '')}
                onClick = {(event) => {
                    close();
                }}>
