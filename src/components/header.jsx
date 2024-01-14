@@ -6,7 +6,7 @@ import {
     Group,
     createStyles,
     Paper, Text,
-    Transition 
+    Transition, MantineProvider
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import ColorToggle from './colorToggle';
@@ -135,9 +135,7 @@ function PageHeader() {
                 currentPath = window.location.pathname;
             }
         };
-
         window.addEventListener("popstate",updatePath);
-
         return () => {
             window.removeEventListener("popstate", updatePath);
         };

@@ -9,9 +9,9 @@ import PageHeader from "../components/header";
 
 function MyApp({ Component, pageProps}) {
     return (
-        <ColorSchemeProvider>
+        <MantineProvider>
             <Component {...pageProps}/>
-        </ColorSchemeProvider>
+        </MantineProvider>
     );
 }
 

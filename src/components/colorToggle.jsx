@@ -4,12 +4,12 @@ import { IconSun, IconMoonStars } from "@tabler/icons";
 const useStyles = createStyles((theme) => ({
     darkmodebutton: {
         '&:hover': {
-            transform: 'rotate(180deg)',
+            transform: theme.colorScheme === 'dark' ? 'rotate(180deg)' : 'rotate(0deg)',
             transition: 'transform 0.3s ease-in-out',
         },
 
         '&:active': {
-            transform: 'rotate(0deg)',
+            transform: theme.colorScheme === 'dark' ? 'rotate(0deg)' : 'rotate(180deg)',
             transition: 'transform 0.3s ease-in-out',
         },
     },
@@ -21,22 +21,21 @@ export default function ColorToggle() {
 
     return (
         <Group position="center">
-            <ActionIcon 
-                radius="xl" 
-                onClick={() => changeColorScheme(colorScheme === 'dark' ? 'light':'dark')}
-                aria-label="dark/light mode toggle"
-                size={37}
-                sx={{
-                    backgroundColor: 
-                        colorScheme === "dark" ? "dark[6]" : "gray[0]",
-                    color:
-                        colorScheme === "dark" ? "yellow[4]" : "blue[6]",
-                }} 
-                >
+            <ActionIcon
+              radius="xl"
+              onClick={() => changeColorScheme()}
+              aria-label="dark/light mode toggle"
+              size={37}
+              sx={(theme) => ({
+                backgroundColor:
+                    theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+                color: 
+                    theme.colorScheme === 'dark' ? theme.colors.yellow[4] : theme.colors.blue[6],
+              })}>
                 {colorScheme === 'dark' ? (
                     <IconSun className={classes.darkmodebutton} size={24} stroke={2.5} />
-              ) : (
-                <IconMoonStars className={classes.darkmodebutton} size={24} stroke={2.5} />
+                ): (
+                    <IconMoonStars className={classes.darkmodebutton} size={24} stroke={2.5} />
                 )}
             </ActionIcon>
         </Group>
