@@ -5,13 +5,23 @@ import {
     completeNavigationProgress,
     NavigationProgress,
 } from '@mantine/nprogress';
-import { url } from "inspector";
 
 export function Loader() {
     const router = useRouter();
 
     useEffect(() => {
-        
+        const handleStart = (url) => url !== router.asPath && startNavigationProgress();
+        const handleComplete = () => completeNavigationProgress();
+
+        router.events.on('routeChangeStart', handleStart);
+        router.events.on('routeChangeComplete',handleComplete);
+        router.events.on('routeChangeError',handleComplete);
+
+        return () => {
+            router.events.off('routeChangeStart', handleStart);
+            router.events.off('routeChangeComplete', handleComplete);
+            router.events.off('routeChangeError', handleComplete);
+        };
     }, [router.asPath]);
 
     return <NavigationProgress progressLabel="loading-page" size={4} autoReset={true} />;
