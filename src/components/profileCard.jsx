@@ -123,11 +123,40 @@ function ProfileCard() {
             </Grid> 
         </div>
 
-        <div className={classes.mobile}></div>
+        <div className={classes.mobile}>
+            <Grid>
+                <Grid.Col md={5} lg={3}>
+                    <div className={classes.image}>
+                        <Image src="../assets/profile-pic.jpg"
+                            alt="menath"
+                            width="250"
+                            height="250"
+                            priority={true}
+                            style={{ borderRadius: '50%'}}
+                        />
+                    </div>
+                </Grid.Col>
 
+                <Grid.Col sm={7} lg={8}>
+                    <Text className={classes.title}>Hi, I'm Menath. <br />I'm a developer</Text>
+                    <Text className={classes.p}>Tech enthusiast</Text>
+                    <Text className={classes.p2} mt={20}>Founder of Enter-44.io</Text>
+                    <Text className={classes.p2}>trying to expand tech industry in Sri Lanka</Text>
 
-
-
+                <Space h="sm"/>
+                <Group>
+                    <Link href="/about" passHref>
+                        <Button variant="gradient" gradient={{ from: 'indigo', to: 'cyan'}}>About Me</Button>
+                    </Link>
+                    <Link href="/projects" passHref>
+                        <Button variant="default" className={classes.flex}>
+                            Projects
+                        </Button>
+                    </Link>
+                </Group>
+                </Grid.Col>
+            </Grid>
+        </div>
     </div>
     );
 }

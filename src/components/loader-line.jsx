@@ -5,6 +5,7 @@ import {
     completeNavigationProgress,
     NavigationProgress,
 } from '@mantine/nprogress';
+import { url } from "inspector";
 
 export function Loader() {
     const router = useRouter();
