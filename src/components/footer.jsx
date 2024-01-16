@@ -1,5 +1,8 @@
 import React from "react";
+import { createStyles, Container, Group, Text } from "@mantine/core";
+import { PropTypes } from "prop-types";
+// import { Interface } from "readline";
 
-export default function Footer() {
-    
-}
+const useStyles = createStyles((theme) => ({
+
+}))
