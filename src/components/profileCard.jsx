@@ -1,6 +1,7 @@
 import { createStyles, Text, Button, Group, Grid, Space } from "@mantine/core";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 // import { IconSpacingVertical } from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({
@@ -82,6 +83,15 @@ const useStyles = createStyles((theme) => ({
 
 function ProfileCard() {
   const { classes } = useStyles();
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+    // if (setIsImageLoaded) {
+    //     console.log("loaded");
+    // }
+  }
+
   return (
     <div> 
         <div className={classes.desktop}>
@@ -111,12 +121,14 @@ function ProfileCard() {
 
                 <Grid.Col sm={5} lg={3}>
                     <div className={classes.image}>
-                        <Image src="../assets/profile-pic.jpg"
+                        <Image src="https://res.cloudinary.com/duzaksn22/image/upload/v1705405151/menath.dev/profile-pic_gpys8l.jpg"
                             alt="menath"
                             width="250"
                             height="250"
                             priority={true}
                             style={{borderRadius: '50%'}}
+                            onLoad={handleImageLoad}
+                            // loading="eager"
                         />
                     </div>
                 </Grid.Col>
@@ -127,12 +139,14 @@ function ProfileCard() {
             <Grid>
                 <Grid.Col md={5} lg={3}>
                     <div className={classes.image}>
-                        <Image src="../assets/profile-pic.jpg"
+                        <Image src="https://res.cloudinary.com/duzaksn22/image/upload/v1705405151/menath.dev/profile-pic_gpys8l.jpg"
                             alt="menath"
                             width="250"
                             height="250"
                             priority={true}
                             style={{ borderRadius: '50%'}}
+                            onLoad={handleImageLoad}
+                            // loading="eager"
                         />
                     </div>
                 </Grid.Col>
