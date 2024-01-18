@@ -1,8 +1,7 @@
 import React from "react";
-import link from 'fs';
 import { Timeline, Space, Text, createStyles, Container, List } from "@mantine/core";
 import TimeLineData from "../data/timeline.json";
-import { group } from "console";
+// import { group } from "console";
 
 const useStyles = createStyles((theme) => ({
     inner: {
@@ -23,7 +22,7 @@ const useStyles = createStyles((theme) => ({
     },
 
     title: {
-        fontFamily: `Greycliff CF`,
+        fontFamily: '"Graycliff CF", sans-serif',
         color: theme.colorScheme === 'dark' ? theme.colors.gray[1] : theme.colors.dark,
         fontSize: 16,
         lineHeight: 1.2,
@@ -40,19 +39,17 @@ export function Progress({data}) {
     const { classes } = useStyles();
     data = TimeLineData.data;
     const groups = data.map((timelineinfo) => {
-        const list = timelineinfo.item.map((info, index) => {
+        const list = timelineinfo.item.map((info, index) => (
             <List.Item key={index}>
                 {info.info}
             </List.Item>
-        });
+        ));
     
         return(
             <Timeline.Item key={timelineinfo.year}>
                 <Text className={classes.title}>{timelineinfo.year}</Text>
                 <Space h="xs"/>
-                <List size="sm">
-                    {list}
-                </List>
+                <List size="sm">{list}</List>
                 <Space h="xs"/>
             </Timeline.Item>
         );
@@ -63,7 +60,7 @@ export function Progress({data}) {
             <div className={classes.inner}>
                 <div className={classes.content}>
                     <Timeline active={4} reverseActive lineWidth={5} bulletSize={22}>
-                        {group}
+                        {groups}
                     </Timeline>
                 </div>
             </div>
