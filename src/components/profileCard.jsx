@@ -1,7 +1,7 @@
 import { createStyles, Text, Button, Group, Grid, Space } from "@mantine/core";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import React from "react";
 // import { IconSpacingVertical } from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({
@@ -83,14 +83,14 @@ const useStyles = createStyles((theme) => ({
 
 function ProfileCard() {
   const { classes } = useStyles();
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+//   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-  const handleImageLoad = () => {
-    setIsImageLoaded(true);
-    // if (setIsImageLoaded) {
-    //     console.log("loaded");
-    // }
-  }
+//   const handleImageLoad = () => {
+//     setIsImageLoaded(true);
+//     // if (setIsImageLoaded) {
+//     //     console.log("loaded");
+//     // }
+//   }
 
   return (
     <div> 
@@ -127,7 +127,7 @@ function ProfileCard() {
                             height="250"
                             priority={true}
                             style={{borderRadius: '50%'}}
-                            onLoad={handleImageLoad}
+                            // onLoad={handleImageLoad}
                             // loading="eager"
                         />
                     </div>
@@ -145,7 +145,7 @@ function ProfileCard() {
                             height="250"
                             priority={true}
                             style={{ borderRadius: '50%'}}
-                            onLoad={handleImageLoad}
+                            // onLoad={handleImageLoad}
                             // loading="eager"
                         />
                     </div>
