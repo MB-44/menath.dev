@@ -1,4 +1,4 @@
-export default function IconMoon() {
+function IconMoon() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -17,3 +17,5 @@ export default function IconMoon() {
         </svg>
     );
 }
+
+export default IconMoon;
