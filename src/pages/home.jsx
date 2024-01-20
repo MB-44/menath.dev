@@ -6,7 +6,7 @@ import PageHeader from "../components/header";
 // import { Space, Container } from "@mantine/core";
 // import { SocialProfileJsonLd } from "next-seo";
 // import { useRouter } from "next/router";
-import Progress from "../components/timeline";
+// import Progress from "../components/timeline";
 
 
 function HomePage() {
@@ -14,7 +14,7 @@ function HomePage() {
         <>
             <PageHeader/>
             {/* <ProfileCard/> */}
-            <Progress/>
+            {/* <Progress/> */}
         </>
     );
 }

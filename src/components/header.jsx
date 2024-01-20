@@ -177,7 +177,18 @@ function PageHeader() {
                   About 
             </a>
         </Link>
-                    
+        
+        <Link href="/education">
+            <a 
+              key="Education"
+              className={cx(classes.link, currentPath == "/education" ? classes.linkActive: '')}
+              onClick={(event) => {
+                 close();
+            }}>
+                Education
+            </a>
+        </Link>
+
         <Link href="/projects">
             <a
                 key="Projects"
@@ -199,8 +210,8 @@ function PageHeader() {
                     Blogs 
                 </a>
         </Link>
-     <ColorToggle/>
-    </Group>    
+     {/* <ColorToggle/> */}
+    </Group>
         
     <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" aria-label="togglebutton" />
 
@@ -228,6 +239,18 @@ function PageHeader() {
                 About 
             </a>
         </Link>
+        
+        <Link href="/education">
+            <a 
+              key="Education"
+              className={cx(classes.link, currentPath == "/education" ? classes.linkActive: '')}
+              onClick={(event) => {
+                 close();
+            }}>
+                Education
+            </a>
+        </Link>
+
 
         <Link href="/projects">
            <a 
