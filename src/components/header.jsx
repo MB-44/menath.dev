@@ -9,8 +9,9 @@ import {
     Transition, MantineProvider
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import ColorToggle from './colorToggle';
 import Link from "next/link";
+import SocialToggle from './socialToggle';
+// import ColorToggle from './theme/colorToggle';
 // import { ToggleButton } from '@mui/material';
 // import { useRouter } from 'next/router';
 // import "./header-style.css";
@@ -148,11 +149,11 @@ function PageHeader() {
                <Text className={classes.title}>
                    menath.dev
                </Text>
-               <div className={classes.burger}>
+               {/* <div className={classes.burger}>
                    <div className={classes.hide}>
                        <ColorToggle/>
                    </div>
-               </div>
+               </div> */}
             </Group>
 
      <Group spacing={5} className={classes.links}>
@@ -162,8 +163,9 @@ function PageHeader() {
                className = {cx(classes.link, currentPath == "/" ? classes.linkActive: '')}
                onClick = {(event) => {
                    close();
-               }}>
-                   Home
+               }}
+            >
+                Home
             </a>
         </Link>
 
@@ -173,8 +175,9 @@ function PageHeader() {
               className={cx(classes.link, currentPath == "/about" ? classes.linkActive: '')}
               onClick={(event) => {
                   close();
-              }}>
-                  About 
+              }}
+            >
+                About 
             </a>
         </Link>
         
@@ -183,37 +186,39 @@ function PageHeader() {
               key="Education"
               className={cx(classes.link, currentPath == "/education" ? classes.linkActive: '')}
               onClick={(event) => {
-                 close();
-            }}>
+                  close();
+              }}
+            >
                 Education
             </a>
         </Link>
 
         <Link href="/projects">
             <a
-                key="Projects"
-                className={cx(classes.link, currentPath == "/projects" ? classes.linkActive: '')}
-                onClick={(event) => {
-                    close();
-                }}>
-                    Projects
-                </a>
+              key="Projects"
+              className={cx(classes.link, currentPath == "/projects" ? classes.linkActive: '')}
+              onClick={(event) => {
+                close();
+              }}
+            >
+                Projects
+            </a>
         </Link>
                     
         <Link href="/blogs">
             <a 
-                key="Blogs"
-                className={cx(classes.link, currentPath == "/blogs" ? classes.linkActive: '')}
-                onClick={(event) => {
-                    close();
-                }}>
-                    Blogs 
-                </a>
+              key="Blogs"
+              className={cx(classes.link, currentPath == "/blogs" ? classes.linkActive: '')}
+              onClick={(event) => {
+                close();
+              }}
+            >
+                Blogs 
+            </a>
         </Link>
-     {/* <ColorToggle/> */}
-        
+    
+    <SocialToggle/>
 
-        
     </Group>
         
     <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" aria-label="togglebutton" />
