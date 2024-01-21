@@ -5,14 +5,21 @@ import React from "react";
 // import { IconSpacingVertical } from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({
+    cardContainer: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh'
+    },
+    
     title: {
         color: theme.colorScheme === "dark" ? theme.colors.gray[0] : theme.colors.dark[9],
         lineHeight: 1,
-        fontSize: 35,
+        fontSize: 28,
         fontWeight: 800,
+        fontFamily: '"Graycliff CF", sans-serif',
         marginBottom: theme.spacing.sm,
         paddingTop: theme.spacing.xl * 2,
-        fontFamily: `Greycliff CF`,
         [theme.fn.smallerThan('sm')]: {
             paddingTop: theme.spacing.xl * 1,
         },
@@ -23,12 +30,12 @@ const useStyles = createStyles((theme) => ({
     },
 
     p: {
-        fontFamily: `Greycliff CF`,
+        fontFamily: "'Greycliff CF', sans-serif",
         color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.gray[9],
         fontSize: 17,
         lineHeight: 1.2,
         letterSpacing: 0.9,
-        fontWeight: 500,
+        fontWeight: 600,
         [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
             fontSize: 16,
         },
@@ -38,7 +45,8 @@ const useStyles = createStyles((theme) => ({
         letterSpacing: 0.9,
         fontSize: 16,
         lineHeight: 1.4,
-        fontWeight: 400,
+        fontWeight: 500,
+        fontFamily: '"Graycliff CF", sans-serif',
     },
 
     flex: {
@@ -48,9 +56,9 @@ const useStyles = createStyles((theme) => ({
     },
 
     image: {
+        display: 'flex',
         maxWidth: '220px',
         maxHeight: '220px',
-        display: 'flex',
         marginLeft: 'auto',
         marginRight: 'auto',
         paddingTop: '20px',
@@ -72,7 +80,7 @@ const useStyles = createStyles((theme) => ({
         }
     },
 
-    display: {
+    desktop: {
         display: 'block',
         '@media (max-width: 768px)': {
             display: 'none'
@@ -83,17 +91,9 @@ const useStyles = createStyles((theme) => ({
 
 function ProfileCard() {
   const { classes } = useStyles();
-//   const [isImageLoaded, setIsImageLoaded] = useState(false);
-
-//   const handleImageLoad = () => {
-//     setIsImageLoaded(true);
-//     // if (setIsImageLoaded) {
-//     //     console.log("loaded");
-//     // }
-//   }
 
   return (
-    <div> 
+    <div className={classes.cardContainer}> 
         <div className={classes.desktop}>
             <Grid justify="space-between">
                 <Grid.Col sm={7} lg={8}>
@@ -120,7 +120,7 @@ function ProfileCard() {
                 </Grid.Col>
 
                 <Grid.Col sm={5} lg={3}>
-                    <div className={classes.image}>
+                    {/* <div className={classes.image}>
                         <Image src="https://res.cloudinary.com/duzaksn22/image/upload/v1705405151/menath.dev/profile-pic_gpys8l.jpg"
                             alt="menath"
                             width="250"
@@ -130,7 +130,7 @@ function ProfileCard() {
                             // onLoad={handleImageLoad}
                             // loading="eager"
                         />
-                    </div>
+                    </div> */}
                 </Grid.Col>
             </Grid> 
         </div>
@@ -138,7 +138,7 @@ function ProfileCard() {
         <div className={classes.mobile}>
             <Grid>
                 <Grid.Col md={5} lg={3}>
-                    <div className={classes.image}>
+                    {/* <div className={classes.image}>
                         <Image src="https://res.cloudinary.com/duzaksn22/image/upload/v1705405151/menath.dev/profile-pic_gpys8l.jpg"
                             alt="menath"
                             width="250"
@@ -148,7 +148,7 @@ function ProfileCard() {
                             // onLoad={handleImageLoad}
                             // loading="eager"
                         />
-                    </div>
+                    </div> */}
                 </Grid.Col>
 
                 <Grid.Col sm={7} lg={8}>
