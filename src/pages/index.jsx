@@ -1,6 +1,7 @@
 import React from "react";
 import PageHeader from "../components/header";
-// import ProfileCard from "../components/profileCard";
+import ProfileCard from "../components/profileCard";
+import NewProfileCard from "../components/newpc";
 // import Test from "../components/test";
 // import PageBody from "../components/body";
 // import { Space, Container } from "@mantine/core";
@@ -13,8 +14,7 @@ function HomePage() {
     return (
         <>
             <PageHeader/>
-            {/* <ProfileCard/> */}
-            {/* <Progress/> */}
+            <NewProfileCard/>
         </>
     );
 }

@@ -144,18 +144,6 @@ function PageHeader() {
             </Group>
 
      <Group spacing={5} className={classes.links}>
-        <Link href="/">
-           <a 
-               key="Home"
-               className = {cx(classes.link, currentPath == "/" ? classes.linkActive: '')}
-               onClick = {(event) => {
-                   close();
-               }}
-            >
-                Home
-            </a>
-        </Link>
-
         <Link href="/about">
             <a 
               key="About"
@@ -203,8 +191,6 @@ function PageHeader() {
                 Blogs 
             </a>
         </Link>
-    
-    <SocialToggle/>
 
     </Group>
         
@@ -213,16 +199,7 @@ function PageHeader() {
         <Transition transition="pop-top-right" duration={200} mounted={opened}>
         {(styles) => (
         <Paper className={classes.dropdown} withBorder style={styles}>
-        <Link href="/">
-            <a 
-              key="Home"
-              className={cx(classes.link, currentPath == "/" ? classes.linkActive: '')}
-              onClick={(event) => {
-                 close();
-            }}>
-                Home 
-            </a>
-        </Link>
+        
 
         <Link href="/about">
             <a 

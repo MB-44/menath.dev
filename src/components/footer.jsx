@@ -1,43 +1,33 @@
 import React from "react";
-import { createStyles, Container, Group, Text } from "@mantine/core";
-import FooterData from '../data/footer.json';
-import { groupCollapsed } from "console";
-import { PropTypes } from "prop-types";
-// import { Interface } from "readline";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
+import WebLinks from "../data/constants/links";
 
-const useStyles = createStyles((theme) => ({
-    footer: {
-        paddingTop: theme.spacing.xl * 2,
-        paddingBottom: theme.spacing.xl * 2,
-        borderTop: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]}`,
-    }
-
-
-
-}))
-
-
-export function Footer({data}) {
-    const { classes } = useStyles();
-    data  = FooterData.data;
-
-    // const groups = data.map((group) => {
-    //     const links = group.links.map((link, index) =>(
-    //         <Text <'a'> key={index} className={classes.link} component="a" href={link.link}     >
-    //             {link.label}
-    //         </Text>
-    //     ));
-        
-        return (
-            <div className={classes.wrapper} key={group.title}>
-              <Text className={classes.title}>{group.title}</Text>
-                {links}
+const Footer = () => {
+    return(
+        <div>
+            <div className="flex flex-col gap-2 justify-center items-center pb-5 pt-5 outline outline-1 footerTheme">
+                <p className="text-sm textTheme">
+                    @ 2024 Menath.dev. All rights reserved.
+                </p>
+                <p className="text-sm textTheme">
+                    Test Version
+                </p>
+                <Link
+                    href={WebLinks.gitRepo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm rounded-xl px-4 py-1 cardTheme textButtonTheme transitionButtonTheme"
+                    aria-label="View Source Code on Github"
+                    >
+                        <div className="flex items-center">
+                            <p>View Source</p>
+                            <FaGithub className="ml-2"/>
+                        </div>
+                </Link>
             </div>
-          );
-    // });
-}   
-
-
-
+        </div>
+    );
+}
 
 export default Footer;

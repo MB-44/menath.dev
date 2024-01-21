@@ -4,6 +4,7 @@ const WebLinks =  {
     instargram: "https://instagram.com/_itzmenaa_",
     twitter: "https://twitter.com/itsmenathBadde",
     email: "menathbaddegama@gmail.com",
+    gitRepo: "https://github.com/MB-44/menath.dev",
 }
 
 export default WebLinks;
