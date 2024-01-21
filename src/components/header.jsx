@@ -11,10 +11,6 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import Link from "next/link";
 import SocialToggle from './socialToggle';
-// import ColorToggle from './theme/colorToggle';
-// import { ToggleButton } from '@mui/material';
-// import { useRouter } from 'next/router';
-// import "./header-style.css";
 
 const useStyles = createStyles((theme) => ({
     root: {
@@ -120,15 +116,6 @@ function PageHeader() {
     const [ opened, { toggle, close }] = useDisclosure(false);
     const { classes, cx } = useStyles();
     const currentPath = typeof window !== "undefined" ? window.location.pathname : null;
-    
-    // const router = useRouter();
-
-    // console.log("Router: ",router);
-    // console.log("Pathname: ",router.pathname);
-
-    // if (!router) {
-    //     return null;
-    // }
 
     useEffect(() => {
         const updatePath = () => {

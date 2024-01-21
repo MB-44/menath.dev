@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedinIn, FaInstagram, FaArrowRight} from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaInstagram, FaBars} from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
 import WebLinks from "../data/constants/links";
 import SiteInfo from "../data/config/info";
+import { useState } from "react";
 
 export default function SocialToggle() {
     const iconSize = 20;
@@ -13,7 +14,7 @@ export default function SocialToggle() {
                 href = {`${WebLinks.instargram}`}
                 target = "_blank"
                 rel = "noopener noreferrer"
-                className = "mr-4 textButtonTheme transitionButtonTheme"
+                className = "mb-4 textButtonTheme transitionButtonTheme"
                 arial-label = {`Visit Instargram profile ${SiteInfo.userName}`}
                 >
                     <FaInstagram size={iconSize}/>
@@ -23,7 +24,7 @@ export default function SocialToggle() {
                 href = {`${WebLinks.twitter}`}
                 target = "_blank"
                 rel = "noopener noreferrer"
-                className = "mr-4 textButtonTheme transitionButtonTheme"
+                className = "mb-4 textButtonTheme transitionButtonTheme"
                 arial-label = {`Visit Twitter profile ${SiteInfo.userName}`}
                 >
                     <FaTwitter size={iconSize}/>
@@ -33,7 +34,7 @@ export default function SocialToggle() {
                 href = {`${WebLinks.github}`}
                 target = "_blank"
                 rel = "noopener noreferrer"
-                className = "mr-4 textButtonTheme transitionButtonTheme"
+                className = "mb-4 textButtonTheme transitionButtonTheme"
                 arial-label = {`Visit Github profile ${SiteInfo.userName}`}
                 >
                     <FaGithub size={iconSize}/>
@@ -43,7 +44,7 @@ export default function SocialToggle() {
                 href = {`${WebLinks.linkedin}`}
                 target = "_blank"
                 rel = "noopener noreferrer"
-                className = "mr-4 textButtonTheme transitionButtonTheme"
+                className = "mb-4 textButtonTheme transitionButtonTheme"
                 arial-label = {`Visit Linkedin profile ${SiteInfo.userName}`}
                 >
                     <FaLinkedinIn size={iconSize}/>
