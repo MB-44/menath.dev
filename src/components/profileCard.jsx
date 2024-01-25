@@ -9,7 +9,7 @@ const useStyles = createStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100vh'
+        height: '40vh',
     },
     
     title: {

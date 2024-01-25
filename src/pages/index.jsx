@@ -8,13 +8,14 @@ import ProfileCard from "../components/profileCard";
 // import { SocialProfileJsonLd } from "next-seo";
 // import { useRouter } from "next/router";
 // import Progress from "../components/timeline";
-
+import Footer from "../components/footer";
 
 function HomePage() {
     return (
         <>
             <PageHeader/>
             <ProfileCard/>
+            <Footer/>
         </>
     );
 }
